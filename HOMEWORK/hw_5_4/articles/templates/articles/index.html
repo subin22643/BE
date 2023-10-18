@@ -7,12 +7,18 @@
 </head>
 <body>
     <h1>메인 페이지</h1>
-    <a href="{% url "articles:new" %}">CREATE</a>
-    {% for article in articles %}
-        <p>{{article.pk}}번째 글</p>
-        <p>제목 : {{article.title}}</p>
-        <hr>
-    {% endfor %}
+    <a href="{% url "articles:new" %}">[CREATE]</a>
+    <ul>
+        {% for article in articles %}
+            <li>{{article.pk}}번째 글</li>
+            <li>제목 : {{article.title}}</li>
+            <a href="{% url "articles:detail" article.pk%}">DETAIL</a>
+            <hr>
+        {% endfor %}  
+    </ul>
+    
+        
+    
 
 </body>
 </html>
