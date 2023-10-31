@@ -1,6 +1,3 @@
-from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-from .models import User
-
-# Register your models here.
-admin.site.register(User, UserAdmin)
+numbers = [1,2,3,4,6,7,8,9,10,11,12,13]
+random.shuffle(numbers)
+print(f'5 {numbers}')
