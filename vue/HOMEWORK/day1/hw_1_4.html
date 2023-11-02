@@ -40,7 +40,7 @@
             const scores = ref([10, 20, 30, 40, 50])
             const is_vacation = { status: ref(false) }
             const {status} = is_vacation
-            const cal_average = function(){
+            const cal_average = () => {
               let sumScore = 0
               for (let i=0;i<scores.value.length;i++) {
                 sumScore += scores.value[i]
