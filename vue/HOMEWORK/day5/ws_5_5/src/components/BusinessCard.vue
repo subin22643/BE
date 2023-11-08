@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import BusinessCardDetail from './BusinessCardDetail.vue'
 
 const business = ref([
@@ -27,6 +27,13 @@ const deleteCard = function(cardDetail) {
     })
 }
 
+const props = defineProps({
+    newCard: Object,
+})
+
+watch(props.newCard, (card) => {
+    business.value.push(card)
+}) 
 
 </script>
 

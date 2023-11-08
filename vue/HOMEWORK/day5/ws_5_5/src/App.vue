@@ -7,7 +7,8 @@
     <main>
       <p>명함을 관리하는 페이지입니다. 여기에 명함 목록이 표시됩니다.</p>
       <article>
-        <BusinessCard/>
+        <CreateCardForm @create-card-event="updateCard"/>
+        <BusinessCard :new-card="newCard"/>
       </article>
     </main>
 
@@ -19,15 +20,28 @@
 
 <script setup>
 import BusinessCard from './components/BusinessCard.vue';
+import CreateCardForm from '@/components/CreateCardForm.vue'
+import { ref } from 'vue'
+
+const newCard = ref({
+  name: '',
+  title: ''
+})
+
+const updateCard = function(info) {
+  newCard.value.name = info.name
+  newCard.value.title = info.title
+  }
+
 </script>
 
 <style scoped>
 .card {
-  width: 500px;
-  height: 150px;
+  width: 400px;
+  height: 100px;
   text-align: center;
-  padding: 75px 0px 0px 0px;
-  font-size: 50px;
+  padding: px 0px 0px 0px;
+  font-size: 40px;
   font-weight: bolder;
   color: white;
   background-color: cornflowerblue;

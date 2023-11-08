@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <p>이름: {{ cardDetail.name }}</p>
+        <h4>이름: {{ cardDetail.name }}</h4>
         <p>직함: {{ cardDetail.title }}</p>
         <button @click="deleteCardFunc">명함 삭제</button>
     </div>
@@ -27,7 +27,9 @@ const deleteCardFunc = function() {
     height: 150px;
     margin: 20px;
     text-align: center;
-    text-wrap: nowrap;
+    /* text-wrap: nowrap; */
     display: inline-block;
+    background-color:whitesmoke;
+    border-radius: 10px;
 }
 </style>
